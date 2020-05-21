@@ -22,8 +22,8 @@ namespace CreamConsulting.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            IEnumerable<Member> employees = _dataRepository.GetAll();
-            return Ok(employees);
+            IEnumerable<Member> members = _dataRepository.GetAll();
+            return Ok(members);
         }
 
         [HttpGet("{id}", Name = "Get")]

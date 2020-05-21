@@ -29,8 +29,8 @@ namespace CreamConsulting
 
         public void Add(Member entity)
         {
-            if (string.IsNullOrEmpty(entity.TelephoneNumber) && string.IsNullOrEmpty(entity.Emailaddress))
-                throw new ValidationException("Email or telephone must be filled out");
+            if (!string.IsNullOrEmpty(entity.TelephoneNumber) && !string.IsNullOrEmpty(entity.Emailaddress))
+                throw new ValidationException("An email or telephone must be filled out");
 
             if (string.IsNullOrEmpty(entity.TelephoneNumber) && string.IsNullOrEmpty(entity.Emailaddress))
                 throw new ValidationException("Email and telephone are filled. Only use one. ");
@@ -43,8 +43,8 @@ namespace CreamConsulting
 
         public void Update(Member dbEntity, Member entity)
         {
-            if (string.IsNullOrEmpty(entity.TelephoneNumber) && string.IsNullOrEmpty(entity.Emailaddress))
-                throw new ValidationException("Email or telephone must be filled out");
+            if (!string.IsNullOrEmpty(entity.TelephoneNumber) && !string.IsNullOrEmpty(entity.Emailaddress))
+                throw new ValidationException("An email or telephone must be filled out");
 
             if (string.IsNullOrEmpty(entity.TelephoneNumber) && string.IsNullOrEmpty(entity.Emailaddress))
                 throw new ValidationException("Email and telephone are filled. Only use one. ");
